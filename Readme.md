@@ -3,8 +3,7 @@ Smart Fridge monitors your fridge, alerts you when food is about to expire, or w
 In addition, it can generate recipe based on items in fridge with the help of ChatGPT.
 
 ## Features
-- Temperature and Humidity Sensor
-  - monitor fridge temperature and humidity
+
 - Food recognition
   - detect food items in fridge
 - Expiration alert
@@ -16,18 +15,13 @@ In addition, it can generate recipe based on items in fridge with the help of Ch
 - Web UI
   - monitor fridge state
   - visualize items in fridge
-  - alert when someone steals your food
   - alert when food is about to expire
   - generate recipe with ChatGPT
 
 
-![](./images/overview-1.png)
-![](./images/overview-2.png)
-
 ## Hardware
 - Raspberry Pi 4B x3
 - Sensors
-  - Temperature and Humidity Sensor
   - Camera Module (Webcam)
 
 ## Frontend Web UI
@@ -40,8 +34,3 @@ Python Flask server that
 
 ## Object Detection
 Raspberry Pi on-device detection using YOLO-v5
-<div>
-  <img style="border-radius: 8px; max-width: 500px" src="./images/object-detection.png" />
-</div>
-
-## Face Detection

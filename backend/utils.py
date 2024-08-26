@@ -15,6 +15,8 @@ food_items = [
     "cake"
 ]
 
+
+
 def filter_none_food_items(raw_items): 
     filtered_items = []
     for item in raw_items:
@@ -26,6 +28,35 @@ def filter_none_food_items(raw_items):
 
 undetected_times_before_deleted = 3
 items_not_detected_count = dict()
+
+# def sync_object_detection():
+#     req_data = request.get_json()
+#     raw_items = [data for data in req_data['objects']]
+#     
+#     # 음식 항목 필터링
+#     detected_items = filter_none_food_items(raw_items)
+#     print("Filtered items:", detected_items)
+
+#     existed_items = []
+#     items = db.get("items")
+#     if items is not None:
+#         existed_items = json.loads(items)
+
+#     db_items = []
+#     if len(existed_items) > len(detected_items):
+#         if db.get('verified') is None:
+#             for ei in existed_items:
+#                 if ei["name"] not in detected_items:
+#                     db_items.append({"name": ei['name'], "expiration_date": None, "in_fridge_since": ei['in_fridge_since'], 'status': 'stolen'})
+
+#     for name in detected_items:
+#         now = datetime.now().strftime("%Y-%m-%d")
+#         db_items.append({"name": name, "expiration_date": None, "in_fridge_since": now, 'status': 'save'})
+
+#     db.set('items', json.dumps(db_items))
+
+#     return '', 204
+
 
 def remove_undetected_items(detected_item_names, db_items):
     print(items_not_detected_count)
@@ -58,20 +89,31 @@ def remove_undetected_items(detected_item_names, db_items):
 def get_reply_from_chatgpt(ingredients):
     openai.api_key = os.getenv('OPENAI_API_KEY')
     
-    messages = [ {"role": "system", "content": "You are a brilliant cook."} ]
-    ing_str = ','.join(ingredients)
+    # 시스템 메시지와 사용자 메시지 초기화
+    messages = [
+        {"role": "system", "content": "You are a brilliant cook."}
+    ]
     
-    message = "provide some recipe ideas using" + ing_str
+    # 재료를 콤마로 구분된 문자열로 변환
+    ing_str = ', '.join(ingredients)
+    print("Ingredients string:", ing_str)
     
+    # 사용자 메시지 생성
+    message = f"Provide recipe ideas using {ing_str}. If there are more than two recipes, please tell me only one recipe. You have to tell me 1. Ingredients 2. How to cook."
+    # 메시지 리스트에 사용자 메시지 추가
     messages.append(
         {"role": "user", "content": message},
     )
+    
+    # GPT-3.5-turbo 모델을 사용하여 채팅 생성
     chat = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo", messages=messages
+        model="gpt-3.5-turbo",
+        messages=messages
     )
         
-    reply = chat.choices[0].message.content
-    print('reply', reply)
+    # 응답 내용 추출
+    reply = chat['choices'][0]['message']['content']
+    print('reply:', reply)
     
     return reply
 

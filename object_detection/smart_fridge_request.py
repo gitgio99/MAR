@@ -2,7 +2,7 @@ import requests
 
 # send detection result to smart-fridge server
 def send_detection_result(names):
-    url = 'https://1ccb-180-177-2-79.jp.ngrok.io/sync/object_detection'
+    url = 'http://127.0.0.1:8080//sync/object_detection' #######
     headers={
         'Content-type':'application/json',
         'Accept':'application/json'

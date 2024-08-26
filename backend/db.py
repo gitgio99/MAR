@@ -2,7 +2,6 @@ import os
 import redis
 from dotenv import load_dotenv
 
-
 def connect_redis():
     load_dotenv()
 
@@ -16,3 +15,4 @@ def connect_redis():
     print(f'Connecting to Redis at {redis_host}:{redis_port} with password {redis_password}')
     
     return db
+
