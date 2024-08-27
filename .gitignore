@@ -1,19 +1,18 @@
 # Ignore everything
 *
 
-# But not these directories
+# But not these directories and their contents
 !backend/
+!backend/**
 !detection/
+!detection/**
 !my-nextjs-app/
+!my-nextjs-app/**
 
-# Ignore .env files everywhere
+# Ignore specific files/folders within allowed directories
+my-nextjs-app/node_modules/
+my-nextjs-app/.next/
 **/.env
 **/.env.*
-
-# Don't ignore .gitignore itself
-!.gitignore
-
-# Keep ignoring these patterns
 __pycache__
 .DS_Store
-**/node_modules/
