@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 food_items = [
-    "banana",
     "apple",
+    "banana",
     "sandwich",
     "orange",
     "broccoli",
@@ -14,7 +14,6 @@ food_items = [
     "pizza",
     "cake"
 ]
-
 
 
 def filter_none_food_items(raw_items): 
@@ -28,34 +27,6 @@ def filter_none_food_items(raw_items):
 
 undetected_times_before_deleted = 3
 items_not_detected_count = dict()
-
-# def sync_object_detection():
-#     req_data = request.get_json()
-#     raw_items = [data for data in req_data['objects']]
-#     
-#     # 음식 항목 필터링
-#     detected_items = filter_none_food_items(raw_items)
-#     print("Filtered items:", detected_items)
-
-#     existed_items = []
-#     items = db.get("items")
-#     if items is not None:
-#         existed_items = json.loads(items)
-
-#     db_items = []
-#     if len(existed_items) > len(detected_items):
-#         if db.get('verified') is None:
-#             for ei in existed_items:
-#                 if ei["name"] not in detected_items:
-#                     db_items.append({"name": ei['name'], "expiration_date": None, "in_fridge_since": ei['in_fridge_since'], 'status': 'stolen'})
-
-#     for name in detected_items:
-#         now = datetime.now().strftime("%Y-%m-%d")
-#         db_items.append({"name": name, "expiration_date": None, "in_fridge_since": now, 'status': 'save'})
-
-#     db.set('items', json.dumps(db_items))
-
-#     return '', 204
 
 
 def remove_undetected_items(detected_item_names, db_items):

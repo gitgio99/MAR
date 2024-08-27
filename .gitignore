@@ -1,21 +1,17 @@
-
-**/__pycache__
-
-**/.DS_Store
-
-**/.env*.local
 # Ignore everything
 *
 
 # But not these directories
 !backend/
 !detection/
-!my-nextjs-app/
+
+# Ignore .env files everywhere
+**/.env
+**/.env.*
 
 # Don't ignore .gitignore itself
 !.gitignore
 
-# Keep ignoring these patterns from the original .gitignore
+# Keep ignoring these patterns
 __pycache__
 .DS_Store
-*.env*.local
