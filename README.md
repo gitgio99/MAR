@@ -2,7 +2,7 @@
 
 **MAR**는 인공지능 기반의 스마트 냉장고 시스템으로, 냉장고 내부의 상태를 실시간으로 모니터링하고 사용자가 필요한 정보를 쉽게 얻을 수 있도록 돕습니다. 유통기한이 임박한 식품에 대한 알림 기능과, 냉장고에 있는 재료들로 만들 수 있는 맞춤형 레시피를 제공하는 것이 특징입니다. 
 
-<img src="https://github.com/user-attachments/assets/6ce847a5-eff9-4813-882a-93a61f15b562" width="30" height="60"/>
+<img src="https://github.com/user-attachments/assets/1cdb4703-163b-4c41-b1a1-c3dcbcf782d1" width="30" height="60"/>
 
 
 ## 🍕주요 기능🍕
@@ -17,7 +17,7 @@
     - 냉장고 내의 식품 목록을 시각적으로 표시합니다.
     - 유통기한 알림과 레시피 생성 기능을 손쉽게 사용할 수 있습니다.
    
-<img src="https://github.com/user-attachments/assets/59ca29fd-c880-4f01-82c3-dee7bd812ff3" alt="ui 디자인" width="450" height="300"/>
+<img src="https://github.com/user-attachments/assets/e325f33a-6615-47a7-9d1b-1e979d70ab00" alt="ui 디자인" width="450" height="300"/>
 
 
 
