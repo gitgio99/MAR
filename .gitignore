@@ -4,3 +4,18 @@
 **/.DS_Store
 
 **/.env*.local
+# Ignore everything
+*
+
+# But not these directories
+!backend/
+!detection/
+!my-nextjs-app/
+
+# Don't ignore .gitignore itself
+!.gitignore
+
+# Keep ignoring these patterns from the original .gitignore
+__pycache__
+.DS_Store
+*.env*.local
