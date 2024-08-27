@@ -4,6 +4,7 @@
 # But not these directories
 !backend/
 !detection/
+!my-nextjs-app/
 
 # Ignore .env files everywhere
 **/.env
@@ -15,3 +16,4 @@
 # Keep ignoring these patterns
 __pycache__
 .DS_Store
+**/node_modules/
